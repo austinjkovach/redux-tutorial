@@ -10,6 +10,8 @@ export const SET_VISIBLITY_FILTER = 'SET_VISIBLITY_FILTER'
 /*
  * other constants
  */
+ 
+let nextTodoId = 0
 
 export const VisibilityFilters = {
   SHOW_ALL: 'SHOW_ALL',
@@ -22,7 +24,7 @@ export const VisibilityFilters = {
  */
 
 export function addTodo(text) {
-  return { type: ADD_TODO, text }
+  return { type: ADD_TODO, id: nextTodoId++, text }
 }
 
 export function completeTodo(index){
